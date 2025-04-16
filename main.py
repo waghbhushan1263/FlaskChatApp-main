@@ -7,7 +7,7 @@ from datetime import datetime
 from werkzeug.utils import secure_filename
 from utils import generate_room_code
 from werkzeug.security import generate_password_hash, check_password_hash
-from urllib.parse import quote as url_quote
+
 from ai import get_ai_response
 
 ############################################  settings
