@@ -16,13 +16,13 @@ if not os.path.exists(UPLOAD_FOLDER):
     os.makedirs(UPLOAD_FOLDER)
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = ''
+app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
 
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///chat.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 socketio = SocketIO(app)
-HUGGINGFACE_API_KEY = ""
+HUGGINGFACE_API_KEY = os.getenv('HF_TOKEN')
 MODEL = "facebook/blenderbot-400M-distill"  # Free chatbot model
 db = SQLAlchemy(app)
 
