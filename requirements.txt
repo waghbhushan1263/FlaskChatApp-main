@@ -4,3 +4,4 @@ flask_sqlalchemy
 flask_socketio
 gunicorn
 gevent
+requests==2.28.2 
